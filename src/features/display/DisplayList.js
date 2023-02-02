@@ -5,10 +5,12 @@ import { selectFeaturedWine } from '../wine/winesSlice';
 import AnimatedDisplayCard from './AnimatedDisplayCard';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
+import { selectFeaturedPromotion} from '../promotions/promotionsSlice';
 
 const DisplayList = () => {
     const items = useSelector((state) => [
-        selectFeaturedWine(state)
+        selectFeaturedWine(state),
+        selectFeaturedPromotion(state)
     ]);
     console.log('display items:', items);
     return (
