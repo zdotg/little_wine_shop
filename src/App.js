@@ -4,7 +4,9 @@ import {
   LIGHTRED,
   ROSE,
   SKINCONTACT,
-  WHITE
+  WHITE,
+  PETNAT,
+  PIQUETTE,
   SPARKLING 
 } from './app/shared/WINES';
 import React from 'react';
