@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Navbar, NavbarBrand, Collapse, NavbarToggler, Nav, NavItem } from "reactstrap";
 import { NavLink} from "react-router-dom";
-import Logo from './app/assets/img/shop.png';
+import WineShopLogo from '../app/assets/img/shop.png'
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     return(
         <Navbar dark color='primary' sticky='top' expand='md'>
             <NavbarBrand className='ms-5' href='/'>
-                <img src={Logo} alt='Little Wine Shop logo' className='float-start' />
+                <img src={WineShopLogo} alt='Little Wine Shop logo' className='float-start' />
                 <h1 className='mt-1'>Little Wine Shop</h1>
             </NavbarBrand>
             <NavbarToggler onClick={() => setMenuOpen(!menuOpen)}/>

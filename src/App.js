@@ -1,13 +1,13 @@
-// import Header from './components/Header';
-// import Footer from './components/Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
 import React from 'react';
-// import {Routes, Route} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './App.css';
-import { Container, Navbar, NavbarBrand } from 'reactstrap';
-import WineShopLogo from './app/assets/img/shop.png'; 
 import { fetchWines } from './features/wine/winesSlice';
+import { fetchPromotions } from './features/promotions/promotionsSlice';
 
 
 function App() {
@@ -15,18 +15,16 @@ function App() {
 
     useEffect(() => {
       dispatch(fetchWines());
+      dispatch(fetchPromotions());
     }, [dispatch]);
     
     return (
       <div className="App">
-        {/* <Header /> */}
-        <Navbar dark color='primary' sticky='top' expand='md'>
-                  <Container>
-                      <NavbarBrand href='/'>
-                          <img src={WineShopLogo} alt='Little Wine Shop logo' />
-                      </NavbarBrand>
-                  </Container>
-              </Navbar>
+          <Header />
+          <Routes>
+              <Route path='/' element={<HomePage />} />
+          </Routes>
+          <Footer />
       </div>
   );
 }
