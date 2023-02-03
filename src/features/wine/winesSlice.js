@@ -7,7 +7,7 @@ export const fetchWines = createAsyncThunk(
     async () => {
         const response = await fetch(baseUrl + 'wines');
         if (!response.ok) {
-            return Promise.reject('Unable to fetch, stateus: ' + response.status);
+            return Promise.reject('Unable to fetch, status: ' + response.status);
         } 
         const data = await response.json();
         return data;

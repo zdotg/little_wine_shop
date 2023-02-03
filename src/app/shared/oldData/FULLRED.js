@@ -12,7 +12,7 @@ export const FULLRED =[
         name: 'Kindeli-Invierno',
         image: Kindeli,
         year: 2021,
-        featured: false,
+        featured: true,
         region: 'New Zealand',
         notes: 'Dark red fruit, Blueberry, Spice',
         varietal: '90% Pinot Noir, 10% Pinot Gris',
