@@ -6,7 +6,8 @@ import {Routes, Route} from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './App.css';
-import { fetchReds } from './features/wine/redsSlice';
+import { fetchReds } from './features/red/redsSlice';
+import { fetchWhites } from './features/white/whitesSlice';
 import { fetchPromotions } from './features/promotions/promotionsSlice';
 
 
@@ -16,6 +17,7 @@ function App() {
     useEffect(() => {
       dispatch(fetchReds());
       dispatch(fetchPromotions());
+      dispatch(fetchWhites());
     }, [dispatch]);
     
     return (
