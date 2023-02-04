@@ -1,15 +1,15 @@
-import { selectAllWines } from './winesSlice';
+import { selectAllReds } from './redsSlice';
 import { Col, Row } from 'reactstrap';
-import WineCard from './WineCard';
+import RedWineCard from './RedWineCard';
 import { useSelector } from 'react-redux';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
 
-const WinesList = () => {
-    const wines = useSelector(selectAllWines);
-    console.log('wines:', wines);
-    const isLoading = useSelector((state) => state.wines.isLoading);
-    const errMsg = useSelector((state) => state.wines.errMsg);
+const RedWinesList = () => {
+    const reds = useSelector(selectAllReds);
+    console.log('reds:', reds);
+    const isLoading = useSelector((state) => state.reds.isLoading);
+    const errMsg = useSelector((state) => state.reds.errMsg);
 
     if (isLoading) {
         return (
@@ -29,10 +29,10 @@ const WinesList = () => {
 
     return (
         <Row className='ms-auto'>
-            {wines.map((wine) => {
+            {reds.map((red) => {
                 return (
-                    <Col md='5' className='m-4' key={wine.id}>
-                        <WineCard wine={wine} />
+                    <Col md='5' className='m-4' key={red.id}>
+                        <RedWineCard color={red} />
                     </Col>
                 );
             })}
@@ -40,4 +40,4 @@ const WinesList = () => {
     );
 }
 
-export default WinesList;
+export default RedWinesList;

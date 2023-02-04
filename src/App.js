@@ -6,7 +6,7 @@ import {Routes, Route} from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './App.css';
-import { fetchWines } from './features/wine/winesSlice';
+import { fetchReds } from './features/wine/redsSlice';
 import { fetchPromotions } from './features/promotions/promotionsSlice';
 
 
@@ -14,7 +14,7 @@ function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-      dispatch(fetchWines());
+      dispatch(fetchReds());
       dispatch(fetchPromotions());
     }, [dispatch]);
     

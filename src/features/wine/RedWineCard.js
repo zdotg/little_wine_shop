@@ -1,8 +1,8 @@
 import {Card, CardImg, CardImgOverlay,CardTitle } from "reactstrap";
 import { Link } from 'react-router-dom';
 
-const WineCard = ({wine}) =>{
-    const { id, image, name } = wine;
+const RedWineCard = ({red}) =>{
+    const { id, image, name } = red;
     return (
         <Link to={`${id}`}>
             <Card>
@@ -19,4 +19,4 @@ const WineCard = ({wine}) =>{
     );
 };
 
-export default WineCard;
+export default RedWineCard;

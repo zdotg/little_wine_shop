@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Col, Row } from 'reactstrap';
-import { selectFeaturedWine } from '../wine/winesSlice';
+import { selectFeaturedRed } from '../wine/redsSlice';
+// import { selectReviewsByWineId } from '../reviews/reviewsSlice';
 import { selectFeaturedPromotion} from '../promotions/promotionsSlice';
 import AnimatedDisplayCard from './AnimatedDisplayCard';
 import Error from '../../components/Error';
@@ -9,8 +10,9 @@ import Loading from '../../components/Loading';
 
 const DisplayList = () => {
     const items = useSelector((state) => [
-        selectFeaturedWine(state),
+        selectFeaturedRed(state),
         selectFeaturedPromotion(state)
+        // selectReviewsByWineId(state)
     ]);
     console.log('display items:', items);
     return (
