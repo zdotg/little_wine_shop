@@ -1,7 +1,7 @@
 import { Card, CardImg, CardText, CardBody, Col } from 'reactstrap';
 
-const SkincontactDetail = ( {skincontact} ) => {
-    const { image, name, description } = skincontact;
+const RoseDetail = ( {rose} ) => {
+    const { image, name, description } = rose;
 
     return (
         <Col md='5' className='m-1'>
@@ -15,4 +15,4 @@ const SkincontactDetail = ( {skincontact} ) => {
     );
 };
 
-export default SkincontactDetail;
+export default RoseDetail;

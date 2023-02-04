@@ -3,6 +3,7 @@ import { Col, Row } from 'reactstrap';
 import { selectFeaturedRed } from '../red/redsSlice';
 import { selectFeaturedWhite } from '../white/whitesSlice';
 import { selectFeaturedSkincontact } from '../skincontact/skincontactsSlice';
+import { selectFeaturedRose } from '../rose/rosesSlice';
 // import { selectReviewsByWineId } from '../reviews/reviewsSlice';
 import { selectFeaturedPromotion} from '../promotions/promotionsSlice';
 import AnimatedDisplayCard from './AnimatedDisplayCard';
@@ -15,6 +16,7 @@ const DisplayList = () => {
         selectFeaturedRed(state),
         selectFeaturedWhite(state),
         selectFeaturedSkincontact(state),
+        selectFeaturedRose(state),
         selectFeaturedPromotion(state)
         // selectReviewsByWineId(state)
     ]);
