@@ -1,11 +1,11 @@
-import { selectAllSkincontacts } from './rosesSlice';
+import { selectAllRoses } from './rosesSlice';
 import { Col, Row } from 'reactstrap';
 import RoseCard from './RoseCard';
 import { useSelector } from 'react-redux';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
 
-const RosesList = () => {
+const RoseWinesList = () => {
     const roses = useSelector(selectAllRoses);
     console.log('roses:', roses);
     const isLoading = useSelector((state) => state.roses.isLoading);
@@ -40,4 +40,4 @@ const RosesList = () => {
     );
 }
 
-export default RosesList;
+export default RoseWinesList;

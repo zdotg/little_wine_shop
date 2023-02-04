@@ -31,7 +31,7 @@ const WhiteWinesList = () => {
         <Row className='ms-auto'>
             {whites.map((white) => {
                 return (
-                    <Col md='5' className='m-4' key={white.id}>
+                    <Col md='2' className='m-4' key={white.id}>
                         <WhiteWineCard color={white} />
                     </Col>
                 );

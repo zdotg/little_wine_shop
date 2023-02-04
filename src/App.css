@@ -30,7 +30,7 @@ h2 {
 }
 
 .site-footer {
-  background-image: linear-gradient(#cec8ff, white);
+  background-image: linear-gradient(#1f8b7b, white);
   padding: 20px 0;
   margin-top: 2rem;
 }
@@ -48,8 +48,8 @@ h2 {
 }
 
 .navbar-dark {
-  background-color: #901cad;
-  background-image: linear-gradient(to right, #5637dd, #3046c5, #510e5a);
+  background-color: #49a251;
+  background-image: linear-gradient(to right, #37bfdd, #134f65, #117615);
   margin-bottom: 2rem;
   min-height: 8rem;
 }

@@ -16,29 +16,29 @@ const Header = () => {
                 <Nav className='ms-auto' navbar>
                     <NavItem>
                         <NavLink className='nav-link' to='/'>
-                            <i className='fa fa-home fa-sm' /> Home
+                            <i className='fa  fa-sm' /> Home
                         </NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink className='nav-link' to='/categories'>
-                            <i className='fa fa-list fa-sm' /> 
+                            <i className='fa  fa-sm' /> 
                             Categories
                         </NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink className='nav-link' to='/shopall'>
-                            <i className='fa fa-list fa-sm' /> 
+                            <i className='fa  fa-sm' /> 
                             Shop All
                         </NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink className='nav-link' to='/about'>
-                            <i className='fa fa-info fa-sm' /> About
+                            <i className='fa  fa-sm' /> About
                         </NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink className='nav-link' to='/contact'>
-                            <i className='fa fa-address-card fa-sm' /> 
+                            <i className='fa  fa-sm' /> 
                             Contact
                         </NavLink>
                     </NavItem>

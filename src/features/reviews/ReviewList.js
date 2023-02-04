@@ -4,8 +4,8 @@ import Review from './Review';
 import { selectReviewsByWineId } from './reviewsSlice';
 import ReviewForm from './ReviewForm';
 
-const ReviewsList = ({ wineId }) => {
-    const reviews = useSelector(selectReviewsByWineId(wineId));
+const ReviewsList = ({ id }) => {
+    const reviews = useSelector(selectReviewsByWineId(id));
 
     if (reviews && reviews.length > 0) {
         return (
@@ -14,7 +14,7 @@ const ReviewsList = ({ wineId }) => {
                 {reviews.map((review) => {
                     return <Review key={review.id} review={review} />;
                 })}
-                <ReviewForm wineId={wineId} />
+                <ReviewForm wineId={id} />
             </Col>
         );
     }

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 
 const AnimatedDisplayCard = ({item}) => {
-    const { image, name, description } = item;
+    const { image, name, region } = item;
     const [toggle, setToggle] = useState(false);
     const animatedStyle = useSpring({
         opacity: toggle ? 1 : 0,
@@ -21,7 +21,7 @@ const AnimatedDisplayCard = ({item}) => {
                 <CardImg src={image} alt={name} />
                 <CardBody>
                     <CardTitle>{name}</CardTitle>
-                    <CardText>{description}</CardText>
+                    <CardText>{region}</CardText>
                 </CardBody>
             </Card>
         </animated.div>
