@@ -9,6 +9,7 @@ import './App.css';
 import { fetchReds } from './features/red/redsSlice';
 import { fetchWhites } from './features/white/whitesSlice';
 import { fetchPromotions } from './features/promotions/promotionsSlice';
+import { fetchSkinContacts } from './features/skincontact/skincontactsSlice';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     useEffect(() => {
       dispatch(fetchReds());
       dispatch(fetchPromotions());
+      dispatch(fetchSkinContacts());
       dispatch(fetchWhites());
     }, [dispatch]);
     

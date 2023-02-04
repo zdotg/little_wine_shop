@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { Col, Row } from 'reactstrap';
 import { selectFeaturedRed } from '../red/redsSlice';
 import { selectFeaturedWhite } from '../white/whitesSlice';
+import { selectFeaturedSkincontact } from '../skincontact/skincontactsSlice';
 // import { selectReviewsByWineId } from '../reviews/reviewsSlice';
 import { selectFeaturedPromotion} from '../promotions/promotionsSlice';
 import AnimatedDisplayCard from './AnimatedDisplayCard';
@@ -13,6 +14,7 @@ const DisplayList = () => {
     const items = useSelector((state) => [
         selectFeaturedRed(state),
         selectFeaturedWhite(state),
+        selectFeaturedSkincontact(state),
         selectFeaturedPromotion(state)
         // selectReviewsByWineId(state)
     ]);

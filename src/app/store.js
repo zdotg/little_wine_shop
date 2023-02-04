@@ -4,11 +4,13 @@ import { promotionsReducer } from '../features/promotions/promotionsSlice';
 import { reviewsReducer } from '../features/reviews/reviewsSlice';
 import logger from 'redux-logger';
 import { whitesReducer } from '../features/white/whitesSlice';
+import { skincontactsReducer } from '../features/skincontact/skincontactsSlice';
 
 export const store = configureStore({
   reducer: {
     reds: redsReducer,
     whites: whitesReducer,
+    skincontacts: skincontactsReducer,
     reviews: reviewsReducer,
     promotions: promotionsReducer
   },
