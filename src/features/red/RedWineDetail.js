@@ -1,18 +1,10 @@
-import { Card, CardImg, CardText, CardBody, Col } from 'reactstrap';
+import React from 'react';
+import WineDetailPage from './WineDetailPage';
 
-const RedWineDetail = ( {red} ) => {
-    const { image, name, region} = red;
-
-    return (
-        <Col md='5' className='m-1'>
-            <Card>
-                <CardImg top src={image} alt={name} />
-                <CardBody>
-                    <CardText>{region}</CardText>
-                </CardBody>
-            </Card>
-        </Col>
-    );
+const RedWineDetail = ({ redWine }) => {
+  return (
+    <WineDetailPage wine={redWine} />
+  );
 };
 
 export default RedWineDetail;

@@ -1,13 +1,11 @@
 import React from 'react';
 import WineCard from './WineCard';
-import { Link } from 'react-router-dom';
 
-const SkinContactCard = ({ id, name, image }) => {
+const SkinContactCard = ({ wine }) => {
   return (
-    <Link to={`/wines/${id}`}>
-      <WineCard wineId={id} wineName={name} wineImage={image} />
-    </Link>
+    <WineCard wine={wine} category="skincontacts" />
   );
 };
 
 export default SkinContactCard;
+

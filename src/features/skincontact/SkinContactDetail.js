@@ -1,18 +1,10 @@
-import { Card, CardImg, CardText, CardBody, Col } from 'reactstrap';
+import React from 'react';
+import WineDetailPage from './WineDetailPage';
 
-const SkincontactDetail = ( {skincontact} ) => {
-    const { image, name, region } = skincontact;
-
-    return (
-        <Col md='5' className='m-1'>
-            <Card>
-                <CardImg top src={image} alt={name} />
-                <CardBody>
-                    <CardText>{region}</CardText>
-                </CardBody>
-            </Card>
-        </Col>
-    );
+const SkinContactDetail = ({ skincontactWine }) => {
+  return (
+    <WineDetailPage wine={skincontactWine} />
+  );
 };
 
-export default SkincontactDetail;
+export default SkinContactDetail;

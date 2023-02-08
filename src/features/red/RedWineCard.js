@@ -1,12 +1,9 @@
 import React from 'react';
 import WineCard from './WineCard';
-import { Link } from 'react-router-dom';
 
-const RedWineCard = ({ id, name, image }) => {
+const RedWineCard = ({ wine }) => {
   return (
-    <Link to={`/wines/${id}`}>
-      <WineCard wineId={id} wineName={name} wineImage={image} />
-    </Link>
+    <WineCard wine={wine} category="reds" />
   );
 };
 

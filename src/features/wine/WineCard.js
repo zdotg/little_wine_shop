@@ -1,18 +1,16 @@
-import React from 'react';
-// import { Link } from 'react-router-dom';
-import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import React from 'react'
+import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap'
+import { Link } from 'react-router-dom'
 
-const WineCard = ({ wine }) => {
-    const { id, name, image } = wine;
+const WineCard = ({ id, name, image, category }) => (
+  <Link to={`/wines/${id}`}>
+    <Card>
+      <CardImg top width="100%" src={image} alt={name} />
+      <CardImgOverlay>
+        <CardTitle>{name}</CardTitle>
+      </CardImgOverlay>
+    </Card>
+  </Link>
+)
 
-    return (
-      <Card>
-        <CardImg top src={image} alt={name} />
-        <CardImgOverlay>
-          <CardTitle>{name}</CardTitle>
-        </CardImgOverlay>
-      </Card>
-    );
-  };
-  
-  export default WineCard;
+export default WineCard
