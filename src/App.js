@@ -1,7 +1,6 @@
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-// import WineListPage from './pages/WineListPage';
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 import { useEffect } from 'react';
@@ -14,7 +13,7 @@ import { fetchSkinContacts } from './features/skincontact/skincontactsSlice';
 import { fetchRoses } from './features/rose/rosesSlice';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
-// import WineListPage from './pages/WineListPage';
+import WineDetailPage from './pages/WineDetailPage';
 
 
 
@@ -34,9 +33,8 @@ function App() {
           <Header />
           <Routes>
               <Route path='/' element={<HomePage />} />
-              <Route path='/contact' element={<ContactPage />} />
-              <Route path='/about' element={<AboutPage />} />
-              {/* <Route path='/shopall' element={<WineListPage />} /> */}
+              <Route path='contact' element={<ContactPage />} />
+              <Route path='about' element={<AboutPage />} />
           </Routes>
           <Footer />
       </div>

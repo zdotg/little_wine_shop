@@ -2,7 +2,7 @@ import React from 'react';
 import WineCard from './WineCard';
 import { Link } from 'react-router-dom';
 
-const SkinContactCard = ({ id, name, image }) => {
+const RoseWineCard = ({ id, name, image }) => {
   return (
     <Link to={`/wines/${id}`}>
       <WineCard wineId={id} wineName={name} wineImage={image} />
@@ -10,4 +10,4 @@ const SkinContactCard = ({ id, name, image }) => {
   );
 };
 
-export default SkinContactCard;
+export default RoseWineCard;
