@@ -1,83 +1,46 @@
-import React, { useState, useEffect } from "react";
-import WineCategory from "./WineCategory";
+import React, { useEffect, useState } from 'react';
+import { Col, Row } from 'reactstrap';
+import WineCard from './WineCard';
+import Error from '../../components/Error';
+import Loading from '../../components/Loading';
+import baseUrl from '../../shared/baseUrl';
 
+const WineList = ({ category }) => {
+  const [wines, setWines] = useState([]);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-const WineList = ({ dbWineshop }) => {
-    const categories = [
-      { name: 'Reds', key: 'reds' },
-      { name: 'Whites', key: 'whites' },
-      { name: 'Roses', key: 'roses' },
-      { name: 'Skin Contacts', key: 'skincontacts' },
-      { name: 'Pet Nats', key: 'petnats' },
-      { name: 'Piquettes', key: 'piquettes' },
-      { name: 'Sparklings', key: 'sparklings' },
-    ];
-  
-    return (
-      <div>
-        {categories.map(({ name, key }) => (
-          <WineCategory key={key} category={name} wines={dbWineshop[key]} />
-        ))}
-      </div>
-    );
-  };
-  
-  export default WineList;
+  useEffect(() => {
+    fetch(`${baseUrl}/db-wineshop.json`)
+      .then(response => response.json())
+      .then(wines => {
+        const categoryWines = wines.filter(wine => wine.category === category);
+        setWines(categoryWines);
+        setLoading(false);
+      })
+      .catch(error => {
+        setError(true);
+        setLoading(false);
+      });
+  }, []);
 
+  if (error) {
+    return <Error />;
+  }
 
+  if (loading) {
+    return <Loading />;
+  }
 
+  return (
+    <Row>
+      {wines.map(wine => (
+        <Col xs={12} sm={6} md={4} key={wine.id}>
+          <WineCard wine={wine} />
+        </Col>
+      ))}
+    </Row>
+  );
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { Container } from 'reactstrap';
-// import RedWinesList from '../features/red/RedWinesList';
-// import RoseWinesList from '../features/rose/RoseWinesList';
-// import WhiteWinesList from '../features/white/WhiteWinesList';
-// import SkincontactsList from '../features/skincontact/SkinContactsList';
-// import SubHeader from '../components/SubHeader';
-
-// const WineListPage = () => {
-//     return (
-//         <Container>
-//             <SubHeader current='Shop All' />
-//             <RedWinesList />
-//             <RoseWinesList />
-//             <SkincontactsList />
-//             <WhiteWinesList />
-//         </Container>
-//     );
-// };
-
-// export default WineListPage;
+export default WineList;
