@@ -5,13 +5,13 @@ import { selectFeaturedWhite } from '../white/whitesSlice';
 import { selectFeaturedSkincontact } from '../skincontact/skincontactsSlice';
 import { selectFeaturedRose } from '../rose/rosesSlice';
 // import { selectReviewsByWineId } from '../reviews/reviewsSlice';
-import { selectFeaturedPromotion} from '../promotions/promotionsSlice';
+import { selectFeaturedPromotion } from '../promotions/promotionsSlice';
 import AnimatedDisplayCard from './AnimatedDisplayCard';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
 
 
-const DisplayList = () => {
+const DisplayFeaturedList = () => {
     const items = useSelector((state) => [
         selectFeaturedRed(state),
         selectFeaturedWhite(state),
@@ -43,4 +43,4 @@ const DisplayList = () => {
     );
 };
 
-export default DisplayList;
+export default DisplayFeaturedList;

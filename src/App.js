@@ -9,11 +9,13 @@ import './App.css';
 import { fetchReds } from './features/red/redsSlice';
 import { fetchWhites } from './features/white/whitesSlice';
 import { fetchPromotions } from './features/promotions/promotionsSlice';
-import { fetchSkinContacts } from './features/skincontact/skincontactsSlice';
+import { fetchSkincontacts } from './features/skincontact/skincontactsSlice';
 import { fetchRoses } from './features/rose/rosesSlice';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
-import WineDetailPage from './pages/WineDetailPage';
+// import WineDetailPage from './pages/WineDetailPage';
+// import { fetchWines } from './features/wine/baseSlice';
+import ShopAllPage from './pages/ShopAllPage';
 
 
 
@@ -23,9 +25,10 @@ function App() {
     useEffect(() => {
       dispatch(fetchReds());
       dispatch(fetchPromotions());
-      dispatch(fetchSkinContacts());
+      dispatch(fetchSkincontacts());
       dispatch(fetchRoses());
       dispatch(fetchWhites());
+      // dispatch(fetchWines());
     }, [dispatch]);
     
     return (
@@ -35,6 +38,7 @@ function App() {
               <Route path='/' element={<HomePage />} />
               <Route path='contact' element={<ContactPage />} />
               <Route path='about' element={<AboutPage />} />
+              <Route path='shopall' element={<ShopAllPage />} />
           </Routes>
           <Footer />
       </div>

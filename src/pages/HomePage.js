@@ -1,12 +1,12 @@
 import { Container } from 'reactstrap';
-import DisplayList from '../features/display/DisplayList';
+import DisplayFeaturedList from '../features/display/DisplayFeaturedList';
 import SubHeader from '../components/SubHeader';
 
 const HomePage = () => {
     return (
         <Container>
             <SubHeader current='New Arrivals' />
-            <DisplayList />
+            <DisplayFeaturedList />
         </Container>
     )
 };
