@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, Col } from 'reactstrap';
 
-const RedWineDetail = ({ red }) => {
-  const { image, name, varietal, notes, region, description } = red;
+const PetnatWineDetail = ({ petnat }) => {
+  const { image, name, varietal, notes, region, description } = petnat;
 
   return (
     <Col xs={12} sm={8} md={6}>
@@ -19,4 +19,4 @@ const RedWineDetail = ({ red }) => {
   );
 };
 
-export default RedWineDetail;
+export default PetnatWineDetail;

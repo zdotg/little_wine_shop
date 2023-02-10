@@ -7,6 +7,9 @@ import { selectAllReds } from '../red/redsSlice';
 import { selectAllRoses } from '../rose/rosesSlice';
 import { selectAllSkinContacts } from '../skincontact/skincontactsSlice';
 import { selectAllWhites } from '../white/whitesSlice';
+import { selectAllPiquettes } from '../piquette/piquettesSlice';
+import { selectAllSparklings } from '../sparkling/sparklingsSlice';
+import { selectAllPetnats } from '../petnat/petnatsSlice';
 
 
 
@@ -16,6 +19,9 @@ const DisplayWineList = () => {
         selectAllRoses(state),
         selectAllSkinContacts(state),
         selectAllWhites(state),
+        selectAllPiquettes(state),
+        selectAllSparklings(state),
+        selectAllPetnats(state)
     ]);
     console.log('display items:', items);
     return (
@@ -86,6 +92,60 @@ const DisplayWineList = () => {
                 skinContactList && (
                     <Col md className='m-1' key={idx}>
                         <AnimatedDisplayCard item={skinContactList} />
+                    </Col>
+                )
+            );
+        })}
+    </Row>,
+     <Row>
+        {items.map((item, idx) => {
+            const { piquetteList, isLoading, errMsg } = item;
+            if (isLoading) {
+                return <Loading key={idx} />;
+            }
+            if (errMsg) {
+                return <Error errMsg={errMsg} key={idx} />;
+            }
+            return (
+                piquetteList && (
+                    <Col md className='m-1' key={idx}>
+                        <AnimatedDisplayCard item={piquetteList} />
+                    </Col>
+                )
+            );
+        })}
+    </Row>,
+    <Row>
+        {items.map((item, idx) => {
+            const { sparklingList, isLoading, errMsg } = item;
+            if (isLoading) {
+                return <Loading key={idx} />;
+            }
+            if (errMsg) {
+                return <Error errMsg={errMsg} key={idx} />;
+            }
+            return (
+                sparklingList && (
+                    <Col md className='m-1' key={idx}>
+                        <AnimatedDisplayCard item={sparklingList} />
+                    </Col>
+                )
+            );
+        })}
+    </Row>,
+    <Row>
+        {items.map((item, idx) => {
+            const { petnatList, isLoading, errMsg } = item;
+            if (isLoading) {
+                return <Loading key={idx} />;
+            }
+            if (errMsg) {
+                return <Error errMsg={errMsg} key={idx} />;
+            }
+            return (
+                petnatList && (
+                    <Col md className='m-1' key={idx}>
+                        <AnimatedDisplayCard item={petnatList} />
                     </Col>
                 )
             );

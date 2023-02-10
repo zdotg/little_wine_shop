@@ -11,11 +11,14 @@ import { fetchWhites } from './features/white/whitesSlice';
 import { fetchPromotions } from './features/promotions/promotionsSlice';
 import { fetchSkincontacts } from './features/skincontact/skincontactsSlice';
 import { fetchRoses } from './features/rose/rosesSlice';
+import { fetchPiquettes } from './features/piquette/piquettesSlice';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 // import WineDetailPage from './pages/WineDetailPage';
 // import { fetchWines } from './features/wine/baseSlice';
 import ShopAllPage from './pages/ShopAllPage';
+import { fetchSparklings } from './features/sparkling/sparklingsSlice';
+import { fetchPetnats } from './features/petnat/petnatsSlice';
 
 
 
@@ -28,6 +31,9 @@ function App() {
       dispatch(fetchSkincontacts());
       dispatch(fetchRoses());
       dispatch(fetchWhites());
+      dispatch(fetchPiquettes());
+      dispatch(fetchSparklings());
+      dispatch(fetchPetnats());
       // dispatch(fetchWines());
     }, [dispatch]);
     

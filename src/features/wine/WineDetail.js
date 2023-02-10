@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody, Col } from 'reactstrap';
 
-const WineDetailPage = ({ wine }) => {
+const WineDetail = ({ wine }) => {
   return (
     <Col xs={12} sm={8} md={6}>
       <Card>
@@ -22,4 +22,4 @@ const WineDetailPage = ({ wine }) => {
   );
 };
 
-export default WineDetailPage;
+export default WineDetail;

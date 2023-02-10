@@ -6,6 +6,9 @@ import { skincontactsReducer } from '../features/skincontact/skincontactsSlice';
 import { rosesReducer } from '../features/rose/rosesSlice';
 import { promotionsReducer } from '../features/promotions/promotionsSlice';
 import { winesReducer } from '../features/wine/baseSlice';
+import { piquettesReducer } from '../features/piquette/piquettesSlice';
+import { sparklingsReducer } from '../features/sparkling/sparklingsSlice';
+import { petnatsReducer } from '../features/petnat/petnatsSlice';
 
 
 export const store = configureStore({
@@ -15,6 +18,9 @@ export const store = configureStore({
     whites: whitesReducer,
     skincontacts: skincontactsReducer,
     roses: rosesReducer,
+    piquettes: piquettesReducer,
+    sparklings: sparklingsReducer,
+    petnats: petnatsReducer,
     promotions: promotionsReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([logger])

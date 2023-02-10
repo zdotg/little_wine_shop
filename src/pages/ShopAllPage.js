@@ -4,6 +4,9 @@ import RedList from '../features/red/redList';
 import WhiteList from '../features/white/whiteList';
 import SkinContactsList from '../features/skincontact/skinContactList';
 import RoseList from '../features/rose/roseList';
+import PiquetteList from '../features/piquette/piquetteList';
+import SparklingList from '../features/sparkling/sparklingList';
+import PetnatList from '../features/petnat/petnatList';
 
 const ShopAllPage = () => {
     return (
@@ -13,6 +16,9 @@ const ShopAllPage = () => {
             <WhiteList />
             <RoseList />
             <SkinContactsList />
+            <PiquetteList />
+            <SparklingList />
+            <PetnatList />
         </Container>
     )
 };
