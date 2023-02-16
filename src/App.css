@@ -1,12 +1,12 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Quicksand";
 }
 
 h1,
 h2,
 h3,
 .card-body>.card-title {
-  font-family: 'Lobster', cursive;
+  font-family: "Quicksand";
 }
 
 .card-title {

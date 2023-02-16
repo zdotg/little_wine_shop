@@ -14,8 +14,6 @@ import { fetchRoses } from './features/rose/rosesSlice';
 import { fetchPiquettes } from './features/piquette/piquettesSlice';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
-// import WineDetailPage from './pages/WineDetailPage';
-// import { fetchWines } from './features/wine/baseSlice';
 import ShopAllPage from './pages/ShopAllPage';
 import { fetchSparklings } from './features/sparkling/sparklingsSlice';
 import { fetchPetnats } from './features/petnat/petnatsSlice';
@@ -34,7 +32,6 @@ function App() {
       dispatch(fetchPiquettes());
       dispatch(fetchSparklings());
       dispatch(fetchPetnats());
-      // dispatch(fetchWines());
     }, [dispatch]);
     
     return (

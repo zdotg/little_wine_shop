@@ -7,8 +7,9 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-social/bootstrap-social.css';
 import 'font-awesome/css/font-awesome.css';
-import 'typeface-lobster';
-import 'typeface-open-sans';
+// import 'typeface-lobster';
+// import 'typeface-open-sans';
+import "@fontsource/quicksand"
 import {BrowserRouter} from 'react-router-dom';
 
 
