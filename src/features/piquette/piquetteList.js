@@ -15,7 +15,7 @@ const PiquetteList = () => {
 
   return (
     <ul style={styles.list}>
-     Piquette List:
+      <p>Piquette List:</p>
       {piquetteList.map((piquette) => (
         <li key={piquette.id} style={styles.listItem}>
           <a href={piquette.url}>

@@ -44,23 +44,23 @@ const DisplayWineList = () => {
             })}
         </Row>,
         <Row>
-        {items.map((item, idx) => {
-            const { whiteList, isLoading, errMsg } = item;
-            if (isLoading) {
-                return <Loading key={idx} />;
-            }
-            if (errMsg) {
-                return <Error errMsg={errMsg} key={idx} />;
-            }
-            return (
-                whiteList && (
-                    <Col md className='m-1' key={idx}>
-                        <AnimatedDisplayCard item={whiteList} />
-                    </Col>
-                )
-            );
-        })}
-    </Row>,
+            {items.map((item, idx) => {
+                const { whiteList, isLoading, errMsg } = item;
+                if (isLoading) {
+                    return <Loading key={idx} />;
+                }
+                if (errMsg) {
+                    return <Error errMsg={errMsg} key={idx} />;
+                }
+                return (
+                    whiteList && (
+                        <Col md className='m-1' key={idx}>
+                            <AnimatedDisplayCard item={whiteList} />
+                        </Col>
+                    )
+                );
+            })}
+        </Row>,
      <Row>
         {items.map((item, idx) => {
             const { roseList, isLoading, errMsg } = item;

@@ -17,6 +17,13 @@ import AboutPage from './pages/AboutPage';
 import ShopAllPage from './pages/ShopAllPage';
 import { fetchSparklings } from './features/sparkling/sparklingsSlice';
 import { fetchPetnats } from './features/petnat/petnatsSlice';
+import ShopPetnatsPage from './pages/lists/ShopPetnat';
+import ShopPiquettesPage from './pages/lists/ShopPiquette';
+import ShopSkinContactsPage from './pages/lists/ShopSkinContact';
+import ShopRedsPage from './pages/lists/ShopRed';
+import ShopRosesPage from './pages/lists/ShopRose';
+import ShopSparklingsPage from './pages/lists/ShopSparkling';
+import ShopWhitesPage from './pages/lists/ShopWhite';
 
 
 
@@ -42,6 +49,13 @@ function App() {
               <Route path='contact' element={<ContactPage />} />
               <Route path='about' element={<AboutPage />} />
               <Route path='shopall' element={<ShopAllPage />} />
+              <Route path='red' element={<ShopRedsPage />} />
+              <Route path='white' element={<ShopWhitesPage />} />
+              <Route path='rose' element={<ShopRosesPage />} />
+              <Route path='skinContact' element={<ShopSkinContactsPage />} />
+              <Route path='petnat' element={<ShopPetnatsPage />} />
+              <Route path='sparkling' element={<ShopSparklingsPage />} />
+              <Route path='piquette' element={<ShopPiquettesPage />} />
           </Routes>
           <Footer />
       </div>

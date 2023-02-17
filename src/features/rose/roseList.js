@@ -15,7 +15,7 @@ const RoseList = () => {
 
   return (
     <ul style={styles.list}>
-    Rose List:
+    <p>Rosé List:</p>
     {roseList.map((rose) => (
       <li key={rose.id} style={styles.listItem}>
         <a href={rose.url}>

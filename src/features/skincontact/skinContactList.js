@@ -15,7 +15,7 @@ const SkinContactsList = () => {
 
   return (
     <ul style={styles.list}>
-      Skincontact List:
+      <p>Skincontact List:</p>
       {skinContactList.map((skincontact) => (
         <li key={skincontact.id} style={styles.listItem}>
           <a href={skincontact.url}>

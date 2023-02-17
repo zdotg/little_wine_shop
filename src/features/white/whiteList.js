@@ -15,7 +15,7 @@ const WhiteList = () => {
 
   return (
     <ul style={styles.list}>
-      White List:
+      <p>White List:</p>
       {whiteList.map((white) => (
         <li key={white.id} style={styles.listItem}>
           <a href={white.url}>

@@ -5,6 +5,8 @@ body {
 h1,
 h2,
 h3,
+p,
+.my-navbar,
 .card-body>.card-title {
   font-family: "Quicksand";
 }
@@ -53,6 +55,7 @@ h2 {
   margin-bottom: 2rem;
   min-height: 8rem;
 }
+
 
 .page-enter {
   opacity: 0;

@@ -15,7 +15,7 @@ const PetnatList = () => {
 
   return (
     <ul style={styles.list}>
-      Petnat List:
+      <p>Petnat List:</p>
       {petnatList.map((petnat) => (
         <li key={petnat.id} style={styles.listItem}>
           <a href={petnat.url}>

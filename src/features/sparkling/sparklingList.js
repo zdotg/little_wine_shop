@@ -15,7 +15,7 @@ const SparklingList = () => {
 
   return (
     <ul style={styles.list}>
-      Sparkling List:
+      <p>Sparkling List:</p>
       {sparklingList.map((sparkling) => (
         <li key={sparkling.id} style={styles.listItem}>
           <a href={sparkling.url}>

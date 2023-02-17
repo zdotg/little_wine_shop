@@ -15,7 +15,7 @@ const RedList = () => {
 
   return (
     <ul style={styles.list}>
-      Red List:
+      <p>Red List:</p>
       {redList.map((red) => (
         <li key={red.id} style={styles.listItem}>
           <a href={red.url}>
