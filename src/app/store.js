@@ -9,6 +9,7 @@ import { winesReducer } from '../features/wine/baseSlice';
 import { piquettesReducer } from '../features/piquette/piquettesSlice';
 import { sparklingsReducer } from '../features/sparkling/sparklingsSlice';
 import { petnatsReducer } from '../features/petnat/petnatsSlice';
+import { merchReducer } from '../misc/merchSlice';
 
 
 export const store = configureStore({
@@ -21,7 +22,8 @@ export const store = configureStore({
     piquettes: piquettesReducer,
     sparklings: sparklingsReducer,
     petnats: petnatsReducer,
-    promotions: promotionsReducer
+    promotions: promotionsReducer,
+    merch: merchReducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([logger])
 });

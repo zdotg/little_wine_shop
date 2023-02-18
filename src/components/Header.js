@@ -50,6 +50,12 @@ const Header = () => {
                         </NavLink>
                     </NavItem>
                     <NavItem>
+                        <NavLink className='nav-link' to='/merch'>
+                            <i className='fa  fa-sm' /> 
+                            Merch
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
                         <NavLink className='nav-link' to='/about'>
                             <i className='fa  fa-sm' /> About
                         </NavLink>

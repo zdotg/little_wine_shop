@@ -5,7 +5,7 @@ import WhiteList from '../../features/white/whiteList';
 const ShopWhitesPage = () => {
     return (
         <Container>
-            <SubHeader current='white' />
+            <SubHeader current='White' />
             <WhiteList />
         </Container>
     )

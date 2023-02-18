@@ -5,7 +5,7 @@ import RedList from '../../features/red/redList';
 const ShopRedsPage = () => {
     return (
         <Container>
-            <SubHeader current='red' />
+            <SubHeader current='Red' />
             <RedList />
         </Container>
     )
