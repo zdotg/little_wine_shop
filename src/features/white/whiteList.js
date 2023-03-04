@@ -1,6 +1,7 @@
-import { selectAllWhites } from './whitesSlice';
-import { useSelector } from 'react-redux';
-import { styles } from '../../listStyles';
+import { selectAllWhites } from "./whitesSlice";
+import { useSelector } from "react-redux";
+import { styles } from "../../listStyles";
+import { Link } from "react-router-dom";
 
 const WhiteList = () => {
   const { whiteList, isLoading, errMsg } = useSelector(selectAllWhites);
@@ -18,10 +19,12 @@ const WhiteList = () => {
       <p>White List:</p>
       {whiteList.map((white) => (
         <li key={white.id} style={styles.listItem}>
-          <a href={white.url}>
+          <Link to={`/white/${white.id}`}>
             <img src={white.image} alt={white.name} style={styles.image} />
-          </a>  
-          <p style={styles.text}>{white.name} ({white.year})</p>
+          </Link>
+          <p style={styles.text}>
+            {white.name} ({white.year})
+          </p>
         </li>
       ))}
     </ul>

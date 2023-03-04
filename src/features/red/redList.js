@@ -1,6 +1,7 @@
-import { selectAllReds } from './redsSlice';
-import { useSelector } from 'react-redux';
-import { styles } from '../../listStyles';
+import { selectAllReds } from "./redsSlice";
+import { useSelector } from "react-redux";
+import { styles } from "../../listStyles";
+import { Link } from "react-router-dom";
 
 const RedList = () => {
   const { redList, isLoading, errMsg } = useSelector(selectAllReds);
@@ -18,10 +19,12 @@ const RedList = () => {
       <p>Red List:</p>
       {redList.map((red) => (
         <li key={red.id} style={styles.listItem}>
-          <a href={red.url}>
+          <Link to={`/red/${red.id}`}>
             <img src={red.image} alt={red.name} style={styles.image} />
-          </a>
-          <p style={styles.text}>{red.name} ({red.year})</p>
+          </Link>
+          <p style={styles.text}>
+            {red.name} ({red.year})
+          </p>
         </li>
       ))}
     </ul>

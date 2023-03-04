@@ -1,6 +1,7 @@
-import { selectAllPiquettes } from './piquettesSlice';
-import { useSelector } from 'react-redux';
-import { styles } from '../../listStyles';
+import { selectAllPiquettes } from "./piquettesSlice";
+import { useSelector } from "react-redux";
+import { styles } from "../../listStyles";
+import { Link } from "react-router-dom";
 
 const PiquetteList = () => {
   const { piquetteList, isLoading, errMsg } = useSelector(selectAllPiquettes);
@@ -18,10 +19,16 @@ const PiquetteList = () => {
       <p>Piquette List:</p>
       {piquetteList.map((piquette) => (
         <li key={piquette.id} style={styles.listItem}>
-          <a href={piquette.url}>
-            <img src={piquette.image} alt={piquette.name} style={styles.image} />
-          </a>
-          <p style={styles.text}>{piquette.name} ({piquette.year})</p>
+          <Link to={`/piquette/${piquette.id}`}>
+            <img
+              src={piquette.image}
+              alt={piquette.name}
+              style={styles.image}
+            />
+          </Link>
+          <p style={styles.text}>
+            {piquette.name} ({piquette.year})
+          </p>
         </li>
       ))}
     </ul>

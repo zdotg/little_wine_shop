@@ -9,6 +9,9 @@ import { selectFeaturedPromotion } from '../promotions/promotionsSlice';
 import AnimatedDisplayCard from './AnimatedDisplayCard';
 import Error from '../../components/Error';
 import Loading from '../../components/Loading';
+import { featuredStyles } from '../../featuredListStyle';
+
+
 
 
 
@@ -34,7 +37,7 @@ const DisplayFeaturedList = () => {
             }
             return (
                 featuredItem && (
-                    <Col md className='m-1' key={idx}>
+                    <Col md className='m-1' key={idx} >
                         <AnimatedDisplayCard item={featuredItem} />
                     </Col>
                 )

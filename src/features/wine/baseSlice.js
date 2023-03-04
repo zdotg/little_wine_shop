@@ -1,63 +1,64 @@
+import { baseUrl } from "../../app/shared/baseUrl";
+import { mapImageURL } from "../../utils/mapImageURL";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { baseUrl } from '../../app/shared/baseUrl';
-import { mapImageURL } from '../../utils/mapImageURL';
+export const fetchWines = createAsyncThunk("wines/fetchWines", async () => {
+  const response = await fetch(`${baseUrl}/wines`);
+  const data = await response.json();
+  const wines = data.map((wine) => ({
+    ...wine,
+    image: mapImageURL(wine.image),
+  }));
+  return wines;
+});
 
-export const fetchWines = createAsyncThunk(
-    'wines/fetchWines',
-    async () => {
-        const response = await fetch(baseUrl + 'wines');
-        if (!response.ok) {
-            return Promise.reject('Unable to fetch, status: ' + response.status);
-        }
-        const data = await response.json();
-        return data;
-    }
+export const fetchSelectedWine = createAsyncThunk(
+  "wines/fetchSelectedWine",
+  async (id) => {
+    const response = await fetch(`${baseUrl}/wines/${id}`);
+    const data = await response.json();
+    const selectedWine = {
+      ...data,
+      image: mapImageURL(data.image),
+    };
+    return selectedWine;
+  }
 );
 
-
-const initialState = {
-    winesArray: [],
-    isLoading: true,
-    errMsg: ''
-};
-
 const winesSlice = createSlice({
-    name: 'wines',
-    initialState,
-    reducers: {},
-    extraReducers: {
-        [fetchWines.pending]: (state) => {
-            state.isLoading = true;
-        },
-        [fetchWines.fulfilled]: (state, action) => {
-            state.isLoading = false;
-            state.errMsg = '';
-            state.winesArray = mapImageURL(action.payload);
-        },
-        [fetchWines.rejected]: (state, action) => {
-            state.isLoading = false;
-            state.errMsg = action.error ? action.error.message : 'Fetch failed';
-        }
-    }
+  name: "wines",
+  initialState: {
+    wines: [],
+    selectedWine: null,
+    status: "idle",
+    error: null,
+  },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchWines.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchWines.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.wines = action.payload;
+      })
+      .addCase(fetchWines.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(fetchSelectedWine.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchSelectedWine.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.selectedWine = action.payload;
+      })
+      .addCase(fetchSelectedWine.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      });
+  },
 });
 
 export const winesReducer = winesSlice.reducer;
-
-// export const selectAllWines = (state) => {
-//   return (
-//     state.reds.redsArray,
-//     state.whites.whitesArray,
-//     state.roses.rosesArray,
-//     state.skincontacts.skincontactsArray
-//   )
-// };
-
-export const selectWineById = (id) => (state) => {
-  return state.wines.winesArray.find(
-      (wine) => wine.id === parseInt(id)
-  );
-};
-
-
-

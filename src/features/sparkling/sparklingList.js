@@ -1,6 +1,7 @@
-import { selectAllSparklings } from './sparklingsSlice';
-import { useSelector } from 'react-redux';
-import { styles } from '../../listStyles';
+import { selectAllSparklings } from "./sparklingsSlice";
+import { useSelector } from "react-redux";
+import { styles } from "../../listStyles";
+import { Link } from "react-router-dom";
 
 const SparklingList = () => {
   const { sparklingList, isLoading, errMsg } = useSelector(selectAllSparklings);
@@ -18,10 +19,16 @@ const SparklingList = () => {
       <p>Sparkling List:</p>
       {sparklingList.map((sparkling) => (
         <li key={sparkling.id} style={styles.listItem}>
-          <a href={sparkling.url}>
-            <img src={sparkling.image} alt={sparkling.name} style={styles.image} />
-          </a>  
-          <p style={styles.text}>{sparkling.name} ({sparkling.year})</p>
+          <Link to={`/sparkling/${sparkling.id}`}>
+            <img
+              src={sparkling.image}
+              alt={sparkling.name}
+              style={styles.image}
+            />
+          </Link>
+          <p style={styles.text}>
+            {sparkling.name} ({sparkling.year})
+          </p>
         </li>
       ))}
     </ul>
