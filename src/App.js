@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import "./App.css";
+import Loading from "./components/Loading";
 // Select wine by id
 // import { selectRedById } from "./features/red/redsSlice";
 // import { selectWhiteById } from "./features/white/whitesSlice";
@@ -72,7 +73,7 @@ function App() {
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (

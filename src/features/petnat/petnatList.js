@@ -1,6 +1,7 @@
-import { selectAllPetnats } from './petnatsSlice';
-import { useSelector } from 'react-redux';
-import { styles } from '../../listStyles';
+import { selectAllPetnats } from "./petnatsSlice";
+import { useSelector } from "react-redux";
+import { styles } from "../../listStyles";
+import { Link } from "react-router-dom";
 
 const PetnatList = () => {
   const { petnatList, isLoading, errMsg } = useSelector(selectAllPetnats);
@@ -18,10 +19,12 @@ const PetnatList = () => {
       <p>Petnat List:</p>
       {petnatList.map((petnat) => (
         <li key={petnat.id} style={styles.listItem}>
-          <a href={petnat.url}>
+          <Link to={`/petnat/${petnat.id}`}>
             <img src={petnat.image} alt={petnat.name} style={styles.image} />
-          </a>
-          <p style={styles.text}>{petnat.name} ({petnat.year})</p>
+          </Link>
+          <p style={styles.text}>
+            {petnat.name} ({petnat.year})
+          </p>
         </li>
       ))}
     </ul>
