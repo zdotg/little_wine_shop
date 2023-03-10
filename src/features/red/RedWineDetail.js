@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 
 const RedWineDetail = () => {
   const { id } = useParams();
-  const red = useSelector((state) => selectRedById(state, id));
+  const red = useSelector(selectRedById(id));
 
   return (
     <Col xs={12} sm={8} md={6}>

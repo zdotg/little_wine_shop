@@ -37,13 +37,14 @@ import ShopSparklingsPage from "./pages/lists/ShopSparkling";
 import ShopWhitesPage from "./pages/lists/ShopWhite";
 import ShopMerchPage from "./pages/lists/ShopMerch";
 // Individual wine detail pages
-import RedWineDetail from "./features/red/RedWineDetail";
-import WhiteWineDetail from "./features/white/WhiteWineDetail";
-import RoseWineDetail from "./features/rose/RoseWIneDetail";
-import SparklingWineDetail from "./features/sparkling/SparklingWineDetail";
-import PetnatWineDetail from "./features/petnat/PetnatWineDetail";
-import SkinContactWineDetail from "./features/skincontact/SkinContactDetail";
-import PiquetteWineDetail from "./features/piquette/PiquetteWineDetail";
+
+// import RedWineDetail from "./features/red/RedWineDetail";
+// import WhiteWineDetail from "./features/white/WhiteWineDetail";
+// import RoseWineDetail from "./features/rose/RoseWIneDetail";
+// import SparklingWineDetail from "./features/sparkling/SparklingWineDetail";
+// import PetnatWineDetail from "./features/petnat/PetnatWineDetail";
+// import SkinContactWineDetail from "./features/skincontact/SkinContactDetail";
+// import PiquetteWineDetail from "./features/piquette/PiquetteWineDetail";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -95,13 +96,14 @@ function App() {
         <Route path="sparkling" element={<ShopSparklingsPage />} />
         <Route path="piquette" element={<ShopPiquettesPage />} />
         {/* Renders user selected wine details page */}
-        <Route path="/red/:id" element={<RedWineDetail />} />
+        <Route path="/wines/:id" component={wineDetailsComponent} />
+        {/* <Route path="/red/:id" element={<RedWineDetail />} />
         <Route path="/white/:id" element={<WhiteWineDetail />} />
         <Route path="/rose/:id" element={<RoseWineDetail />} />
         <Route path="/skincontact/:id" element={<SkinContactWineDetail />} />
         <Route path="/petnat/:id" element={<PetnatWineDetail />} />
         <Route path="/piquette/:id" element={<PiquetteWineDetail />} />
-        <Route path="/sparkling/:id" element={<SparklingWineDetail />} />
+        <Route path="/sparkling/:id" element={<SparklingWineDetail />} /> */}
       </Routes>
       <Footer />
     </div>

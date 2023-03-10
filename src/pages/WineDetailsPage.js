@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
+import { Container } from "reactstrap";
+import SubHeader from "../components/SubHeader";
 import RedWineDetail from "../features/red/RedWineDetail";
 import WhiteWineDetail from "../features/white/WhiteWineDetail";
 import RoseWineDetail from "../features/rose/RoseWIneDetail";
@@ -22,7 +25,7 @@ const WineDetailsPage = () => {
     fetchWines();
   }, []);
 
-  const wine = wines.find((wine) => wine.id === id);
+  const wine = wines.find((wine) => wine.id === parseInt(id));
 
   let wineDetailComponent;
   switch (wine.type) {
@@ -52,10 +55,10 @@ const WineDetailsPage = () => {
   }
 
   return (
-    <div>
-      <h1>{wine.name}</h1>
-      {wineDetailComponent}
-    </div>
+    <Container>
+      <SubHeader current={wine?.name} />
+      {wine && wineDetailComponent}
+    </Container>
   );
 };
 
